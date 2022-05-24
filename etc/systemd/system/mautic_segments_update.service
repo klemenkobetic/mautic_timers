@@ -1,0 +1,10 @@
+[Unit]
+Description=mautic_segments_update job
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+StandardError=append:/var/log/cronjobs/timer_mautic_segments_update.log
+StandardOutput=append:/var/log/cronjobs/timer_mautic_segments_update.log
+ExecStart=/bin/bash /usr/local/bin/mautic_segments_update.sh
